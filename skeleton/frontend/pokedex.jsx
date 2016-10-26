@@ -4,8 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 window._ = require('lodash');
 
-// stuff just for testing
-import { requestAllPokemon } from './actions/pokemon_actions';
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,5 +12,4 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
   const rootEl = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, rootEl);
-  store.dispatch(requestAllPokemon());
 });

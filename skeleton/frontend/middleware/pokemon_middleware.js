@@ -5,7 +5,6 @@ const PokemonMiddleware = ({ dispatch }) => next => action => {
   let success;
   switch(action.type) {
     case REQUEST_ALL_POKEMON:
-    // where does this data come from?
       success = data => dispatch(receiveAllPokemon(data));
       fetchAllPokemon(success);
       return next(action);
