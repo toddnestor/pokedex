@@ -1,5 +1,8 @@
-import { fetchAllPokemon } from '../util/api_util';
-import { REQUEST_ALL_POKEMON, receiveAllPokemon } from '../actions/pokemon_actions';
+import { fetchAllPokemon, fetchPokemonDetail } from '../util/api_util';
+import { REQUEST_ALL_POKEMON,
+         receiveAllPokemon,
+         REQUEST_POKEMON_DETAIL,
+         receivePokemonDetail } from '../actions/pokemon_actions';
 
 const PokemonMiddleware = ({ dispatch }) => next => action => {
   let success;
@@ -7,10 +10,14 @@ const PokemonMiddleware = ({ dispatch }) => next => action => {
     case REQUEST_ALL_POKEMON:
       success = data => dispatch(receiveAllPokemon(data));
       fetchAllPokemon(success);
-      return next(action);
-    default:
-      return next(action);
+      break;
+    case REQUEST_POKEMON_DETAIL:
+      success = data => dispatch(receivePokemonDetail(data));
+      fetchPokemonDetail(action.id, success);
+      break;
   }
+
+  return next(action);
 };
 
 export default PokemonMiddleware;

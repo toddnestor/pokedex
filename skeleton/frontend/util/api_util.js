@@ -8,3 +8,12 @@ export const fetchAllPokemon = (success, error = defaultError) => {
     error
   });
 };
+
+export const fetchPokemonDetail = (id, success, error = defaultError) => {
+  $.ajax({
+    method: "GET",
+    url: `/api/pokemon/${id}`,
+    success,
+    error
+  });
+};
