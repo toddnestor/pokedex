@@ -4,7 +4,9 @@ import { REQUEST_ALL_POKEMON,
          REQUEST_POKEMON_DETAIL,
          receivePokemonDetail,
          CREATE_POKEMON,
+         receivePokemonErrors,
          receivePokemon} from '../actions/pokemon_actions';
+import { hashHistory } from 'react-router';
 
 const PokemonMiddleware = ({ dispatch }) => next => action => {
   let success;
@@ -18,7 +20,14 @@ const PokemonMiddleware = ({ dispatch }) => next => action => {
       fetchPokemonDetail(action.id, success);
       break;
     case CREATE_POKEMON:
-      success = data => dispatch(receivePokemon(data));
+      success = data => {
+        if (data.id) {
+          dispatch(receivePokemon(data));
+          hashHistory.push(`/pokemon/${data.id}`);
+        } else {
+          dispatch(receivePokemonErrors(data));
+        }
+      };
       createPokemon(action.pokemon, success);
       break;
   }

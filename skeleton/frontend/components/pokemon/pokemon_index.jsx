@@ -5,6 +5,7 @@ const PokemonIndex = ({ pokemon, children }) => (
   <section className="pokedex">
     <aside>
       <ol>
+        <li><a href="#/">Create New Pokemon</a></li>
         {
           pokemon.map(poke => <PokemonIndexItem key={poke.id} pokemon={poke} />)
         }

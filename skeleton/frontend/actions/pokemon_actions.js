@@ -4,6 +4,8 @@ export const RECEIVE_POKEMON_DETAIL = 'RECEIVE_POKEMON_DETAIL';
 export const REQUEST_POKEMON_DETAIL = 'REQUEST_POKEMON_DETAIL';
 export const CREATE_POKEMON = 'CREATE_POKEMON';
 export const RECEIVE_POKEMON = 'RECEIVE_POKEMON';
+export const RECEIVE_POKEMON_ERRORS = 'RECEIVE_POKEMON_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 export const receiveAllPokemon = pokemon => ({
   type: RECEIVE_ALL_POKEMON,
@@ -32,4 +34,13 @@ export const createPokemon = pokemon => ({
 export const receivePokemon = pokemon => ({
   type: RECEIVE_POKEMON,
   pokemon
+});
+
+export const receivePokemonErrors = errors => ({
+  type: RECEIVE_POKEMON_ERRORS,
+  errors
+});
+
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
 });
