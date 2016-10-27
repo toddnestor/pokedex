@@ -1,6 +1,7 @@
 import React from 'react';
 
 const PokemonDetail = ({ pokemonDetail, children, router }) => {
+  console.log(router);
   const handleClick = id => e => router.push(`/pokemon/${pokemonDetail.id}/item/${id}`);
 
   return (

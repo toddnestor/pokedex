@@ -10,7 +10,7 @@ const PokemonIndex = ({ pokemon, children }) => (
         }
       </ol>
     </aside>
-    <section>
+    <section className="main-content-area">
       { children }
     </section>
   </section>
