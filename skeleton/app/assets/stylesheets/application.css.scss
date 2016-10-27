@@ -26,7 +26,6 @@ body {
 	color: $grey;
 	font-size: 12px;
 	height: 100%;
-	padding-right: 10px;
 }
 
 header {
@@ -45,25 +44,148 @@ header {
 .thumb {
 	width: 20px;
 	height: auto;
+	vertical-align: middle;
+	padding-right: 10px;
 }
 
 .pokedex {
 	display: flex;
 	justify-content: space-between;
+	height: 100%;
 }
 
 input, select, button {
 	display: block;
-	width: 90%;
-	margin: 20px 15px;
+	width: 100%;
+	margin: 20px 0;
 	box-sizing: border-box;
+	background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid black;
+	font-size: 16px;
+	font-weight: 500;
+	padding: 10px;
+	border-radius: 0px;
+	-webkit-appearance: none;
+	outline: none;
+}
+
+button {
+	border: 0;
+	background-color: #f00;
+	color: #fff;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+button:hover {
+	box-shadow: 0 0 15px black;
 }
 
 .main-content-area {
-	width: 60%;
+	width: 100%;
+	border: 20px solid #f00;
+	border-bottom: none;
+	padding: 50px;
 }
 
 aside {
 	width: 30%;
-	max-width: 150px;
+	max-width: 250px;
+	height: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+aside ul {
+	padding-left: 0;
+}
+
+aside li {
+	padding: 10px;
+	border-bottom: 1px solid $grey;
+	line-height: 20px;
+	cursor: pointer;
+}
+
+aside li:first-child {
+	border-top: 1px solid $grey;
+}
+
+aside li:hover {
+	color: white;
+	border-bottom-color: white;
+}
+
+#root {
+	height: calc(100% - 113px);
+}
+
+.pokemon-number {
+	margin-right: 5px;
+}
+
+nav {
+	position: absolute;
+	top: 65px;
+	left: 238px;
+}
+
+nav ul {
+	margin: 0;
+	list-style: none;
+}
+
+nav ul li {
+	float: left;
+	margin-right: 30px;
+}
+
+nav ul li a {
+	color: $grey;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+nav ul li a:hover {
+	color: white;
+}
+aside::-webkit-scrollbar {
+	display: none;
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.form {
+	background-color: #d1ccb6;
+  padding: 50px 225px;
+}
+
+.form img {
+	display: block;
+	margin: auto;
+}
+
+.loading {
+	margin: auto;
+}
+
+.errors {
+	padding: 15px;
+	padding-bottom: 0;
+}
+
+.errors ul {
+	margin: 0;
+	border: 2px solid #f00;
+	margin: 0;
+	padding: 20px 50px;
+	background: beige;
+}
+
+.errors ul li {
+	color: #f00;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 5px;
 }

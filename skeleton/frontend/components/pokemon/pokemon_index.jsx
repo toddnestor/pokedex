@@ -4,12 +4,11 @@ import PokemonIndexItem from './pokemon_index_item';
 const PokemonIndex = ({ pokemon, children, loading }) => (
   <section className="pokedex">
     <aside>
-      <ol>
-        <li><a href="#/">Create New Pokemon</a></li>
+      <ul>
         {
-          pokemon.map(poke => <PokemonIndexItem key={poke.id} pokemon={poke} />)
+          pokemon.map((poke, idx) => <PokemonIndexItem key={poke.id} number={idx + 1} pokemon={poke} />)
         }
-      </ol>
+      </ul>
     </aside>
     <section className="main-content-area">
       <img src={'/assets/pokemon_spinner.gif'} className="loading" style={{display: loading ? 'block' : 'none'}} />

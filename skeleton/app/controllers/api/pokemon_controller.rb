@@ -10,6 +10,7 @@ class Api::PokemonController < ApplicationController
   end
 
   def create
+    sleep(2)
     @pokemon = Pokemon.new(pokemon_params)
 
     if @pokemon.save

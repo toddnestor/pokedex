@@ -83,8 +83,9 @@ class PokemonForm extends React.Component {
     let { name, image_url, poke_type, attack, defense, moves } = this.state;
 
     return (
-      <div>
-        <div>
+      <div className="form">
+        <img src={'/assets/pokemon-logo.png'} />
+        <div className='errors'>
           {this.errors()}
         </div>
         <form onSubmit={this.handleSubmit.bind(this)}>
