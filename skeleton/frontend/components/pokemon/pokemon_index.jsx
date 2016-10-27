@@ -1,7 +1,7 @@
 import React from 'react';
 import PokemonIndexItem from './pokemon_index_item';
 
-const PokemonIndex = ({ pokemon, children }) => (
+const PokemonIndex = ({ pokemon, children, loading }) => (
   <section className="pokedex">
     <aside>
       <ol>
@@ -12,7 +12,10 @@ const PokemonIndex = ({ pokemon, children }) => (
       </ol>
     </aside>
     <section className="main-content-area">
-      { children }
+      <img src={'/assets/pokemon_spinner.gif'} className="loading" style={{display: loading ? 'block' : 'none'}} />
+      <div style={{display: loading ? 'none' : 'block'}}>
+        { children }
+      </div>
     </section>
   </section>
 );

@@ -5,6 +5,10 @@ class Api::PokemonController < ApplicationController
     @pokemons = Pokemon.all
   end
 
+  def show
+    sleep(2)
+  end
+
   def create
     @pokemon = Pokemon.new(pokemon_params)
 
