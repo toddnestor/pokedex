@@ -15,32 +15,11 @@ class PokemonForm extends React.Component {
     return {
       name: "",
       image_url: "",
-      poke_type: this.pokeTypes()[0],
+      poke_type: POKEMON_TYPES[0],
       attack: "",
       defense: "",
       moves: ["", ""]
     };
-  }
-
-  pokeTypes(){
-    return [
-      "fire",
-      "electric",
-      "normal",
-      "ghost",
-      "psychic",
-      "water",
-      "bug",
-      "dragon",
-      "grass",
-      "fighting",
-      "ice",
-      "flying",
-      "poison",
-      "ground",
-      "rock",
-      "steel"
-    ];
   }
 
   update(property) {
@@ -91,7 +70,7 @@ class PokemonForm extends React.Component {
           <input type="text" placeholder="Image Url" onChange={this.update('image_url').bind(this)} value={image_url} />
           <select onChange={this.update('poke_type').bind(this)}>
             {
-              this.pokeTypes().map((type, idx) => (
+              POKEMON_TYPES.map((type, idx) => (
                 <option key={idx} value={type}>{type}</option>
               ))
             }
