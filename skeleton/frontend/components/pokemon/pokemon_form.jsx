@@ -45,9 +45,7 @@ class PokemonForm extends React.Component {
 
   update(property) {
     return (e) => {
-      let updates = {};
-      updates[property] = e.currentTarget.value;
-      this.setState(updates);
+      this.setState({[property]: e.currentTarget.value});
     };
   }
 
