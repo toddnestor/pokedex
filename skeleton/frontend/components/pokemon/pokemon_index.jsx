@@ -12,7 +12,7 @@ const PokemonIndex = ({ pokemon, children, loading }) => (
     </aside>
     <section className="main-content-area">
       <img src={'/assets/pokemon_spinner.gif'} className="loading" style={{display: loading ? 'block' : 'none'}} />
-      <div style={{display: loading ? 'none' : 'block'}}>
+      <div style={{display: loading ? 'none' : 'block', height: '100%'}}>
         { children }
       </div>
     </section>

@@ -3,9 +3,9 @@ import React from 'react';
 const ItemDetail = ({ item }) => {
   return (
     <div>
-      <h2>{item.name}</h2>
-      <h3>Happiness: {item.happiness}</h3>
-      <h3>Price: ${item.price}</h3>
+      <h5>{item.name}</h5>
+      <h6>Happiness: {item.happiness}</h6>
+      <h6>Price: ${item.price}</h6>
     </div>
   );
 };
